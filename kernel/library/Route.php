@@ -48,7 +48,7 @@ class Route
     public function dispatch(string $method, string $uri)
     {
         $method = strtolower($method);
-        foreach ($this->route[$method] as $item) {
+        foreach (($this->route[$method] ?? []) as $item) {
             if ($uri == $item['uri']) {
                 list($controller, $action) = explode('@', $item['handle']);
                 return (new $controller)->$action();
