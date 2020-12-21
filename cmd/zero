@@ -1,0 +1,11 @@
+#!/usr/bin/env php
+<?php
+
+// [ 应用入口 ]
+namespace zero;
+
+// 使用 composer 自动加载机制
+require_once dirname(__DIR__) . '/vendor/autoload.php';
+
+// 启动框架
+Container::get('app')->run($argv);
