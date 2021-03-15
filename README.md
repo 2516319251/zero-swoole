@@ -59,6 +59,26 @@ USR1 重新打开日志文件
 USR2 平滑重载所有worker进程并重新载入配置和二进制模块
 kill -QUIT `cat /www/server/php/pro/var/run/php-fpm.pid`
 
+
+./configure  --prefix=/usr/local/nginx
+  --sbin-path=/usr/local/nginx/sbin/nginx
+   --conf-path=/usr/local/nginx/conf/nginx.conf
+    --error-log-path=/var/log/nginx/error.log
+      --http-log-path=/var/log/nginx/access.log
+        --pid-path=/var/run/nginx/nginx.pid
+         --lock-path=/var/lock/nginx.lock
+           --user=nginx
+            --group=nginx
+             --with-http_ssl_module
+              --with-http_stub_status_module
+               --with-http_gzip_static_module
+                --http-client-body-temp-path=/var/tmp/nginx/client/
+                 --http-proxy-temp-path=/var/tmp/nginx/proxy/
+                  --http-fastcgi-temp-path=/var/tmp/nginx/fcgi/
+                   --http-uwsgi-temp-path=/var/tmp/nginx/uwsgi
+                    --http-scgi-temp-path=/var/tmp/nginx/scgi
+                     --with-pcre
+
 ```
 
 4. 使用
